@@ -16,7 +16,7 @@ for filename in glob.glob('data/*.png'):
         class_list.append([1, 0, 0])
     elif "p" in filename:
         class_list.append([0, 1, 0])
-    elif "s":
+    elif "s" in filename:
         class_list.append([0, 0, 1])
     im = cv2.imread(filename)
     # Resizing to 64px by 64px
@@ -36,18 +36,18 @@ from keras.layers import Conv2D, MaxPooling2D
 
 # CNN Structure
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3)))
+model.add(Conv2D(256, (3, 3), input_shape=(64, 64, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
 
-model.add(Conv2D(32, (3, 3)))
+model.add(Conv2D(128, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
 
 model.add(Flatten())
-model.add(Dense(32))
+model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
 
@@ -60,7 +60,7 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 # Training the model
 MULT = 10
 print(X_train.shape)
-model.fit(np.repeat(X_train, MULT, axis=0), np.repeat(y_train, MULT, axis=0), validation_data=(X_test, y_test), epochs=10, batch_size=256, verbose=1, shuffle=True)
+model.fit(np.repeat(X_train, MULT, axis=0), np.repeat(y_train, MULT, axis=0), validation_data=(X_test, y_test), epochs=50, batch_size=256, verbose=1, shuffle=True)
 
 # Saving our model
 model.save("model.h5")
