@@ -22,4 +22,7 @@ For the most part, the challenges came from our environment. With only 12 hours,
 
 # What's Next
 
-We plan to expand the game to Rock, Paper, Scissors, Lizard, Spock (the one from Big Bang Theory). One of the challenges we plan to face is distinguishing Rock from Lizard which may require more detailed imaging. Although what we created is just for entertainment purposes, this proof-of-concept project can be used for so much more whether it's diagnosing medical conditions or evaluating crop health.
+We plan to expand the game to Rock, Paper, Scissors, Lizard, Spock (the one from Big Bang Theory). One of the challenges we plan to face is distinguishing Rock from Lizard which may require more detailed imaging. Although what we created is just for entertainment purposes, this proof-of-concept project can be used for so much more whether it's diagnosing medical conditions or evaluating crop health.'
+
+# Update 4/15/19
+I have created a description and I am currently working on making a more comprehensive model with a different CNN structure.
